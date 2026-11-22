@@ -41,13 +41,13 @@
     </section>
     <section id="schedule" class="schedule-section container" aria-labelledby="schedule-heading">
       <div class="section-heading">
-        <div><span class="section-kicker"><span class="chevron-small" aria-hidden="true"></span> YOUR SESSION GUIDE</span><h2 id="schedule-heading">Find your next <span>session.</span></h2><p>Search by topic, presenter, campus, or title. Time slots keep simultaneous sessions together.</p></div>
+        <div><span class="section-kicker"><span class="chevron-small" aria-hidden="true"></span> YOUR SESSION GUIDE</span><h2 id="schedule-heading">Find your next <span>session.</span></h2><p>Search by topic, presenter, campus, or title. Select a session for the full description. Time slots keep simultaneous sessions together.</p></div>
         <button type="button" class="print-button" id="printButton"><span aria-hidden="true">⎙</span> Print view</button>
       </div>
       <div class="filter-panel" aria-label="Filter sessions">
         <div class="search-row">
           <label class="field-label" for="search">Search sessions</label>
-          <div class="search-field"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Try “accessibility”, “Hunter”, or “Jose Diaz”" autocomplete="off"></div>
+          <div class="search-field"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Try “accessibility”, “instructional design”, or “City Tech”" autocomplete="off"></div>
         </div>
         <div class="controls-row">
           <fieldset class="day-control"><legend class="field-label">Day</legend><div class="day-switch" role="group" aria-label="Day filter"><button type="button" class="day-button active" data-day="all" aria-pressed="true">Both days</button><button type="button" class="day-button" data-day="2026-12-03" aria-pressed="false">Thu · Dec 3</button><button type="button" class="day-button" data-day="2026-12-04" aria-pressed="false">Fri · Dec 4</button></div></fieldset>
@@ -62,6 +62,11 @@
       <div class="note"><span class="note-glyph" aria-hidden="true">i</span><p><strong>About this guide:</strong> This is a curated selection of presentations involving LIFT@CUNY members, not the full conference program. Times and room assignments may change; consult the official conference schedule for updates.</p></div>
     </section>
   </main>
+  <dialog id="sessionDialog" class="session-dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDescription">
+    <div class="dialog-top"><span class="dialog-kicker">LIFT@CUNY · SESSION DETAILS</span><button type="button" class="dialog-close" id="dialogClose" aria-label="Close session details">×</button></div>
+    <div class="dialog-body"><span id="dialogDate" class="dialog-date"></span><h2 id="dialogTitle"></h2><div id="dialogTopics" class="tags dialog-tags"></div><p id="dialogCampus" class="dialog-campus"></p><div id="dialogDescription" class="dialog-description"></div><h3 class="dialog-presenters-heading">Presenters</h3><p id="dialogPresenters" class="dialog-presenters"></p><p id="dialogRoom" class="dialog-room" hidden></p></div>
+    <div class="dialog-footer"><span class="mini-chevron" aria-hidden="true"></span><button type="button" id="dialogDone" class="button button-primary">Close details</button></div>
+  </dialog>
   <footer class="footer"><div class="footer-chevrons" aria-hidden="true"></div><div class="container footer-inner"><div><strong>LIFT@CUNY Collective</strong><p>Learning Design, Innovation &amp; Flexible Technology</p></div><a href="https://events.govtech.com/CUNY-IT-Conference" target="_blank" rel="noopener noreferrer">View official conference details ↗</a></div></footer>
 </body>
 </html>

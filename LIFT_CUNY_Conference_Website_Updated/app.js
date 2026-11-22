@@ -32,7 +32,7 @@ function matches(s){
  if(state.day!=='all'&&s.date!==state.day) return false;
  if(state.topic!=='all'&&!s.topics.includes(state.topic))return false;
  if(state.campus!=='all'&&s.campus!==state.campus)return false;
- if(state.search){const hay=[s.title,s.description,s.campus,...s.topics,...s.presenters,s.time].join(' ').toLocaleLowerCase();if(!hay.includes(state.search))return false;}
+ if(state.search){const hay=[s.title,s.description,s.fullDescription,s.campus,...s.topics,...s.presenters,s.time].join(' ').toLocaleLowerCase();if(!hay.includes(state.search))return false;}
  return true;
 }
 function card(s){
@@ -40,9 +40,9 @@ function card(s){
  const room = SHOW_ROOMS && s.room ? `<p class="room"><strong>Room:</strong> ${escapeHTML(s.room)}</p>` : '';
  return `<article class="session-card" id="${escapeHTML(s.id)}" aria-labelledby="title-${escapeHTML(s.id)}">
    <div class="card-icon">${icon(s.icon)}</div>
-   <div class="card-content"><div class="card-topline"><span class="campus-label">${escapeHTML(s.campus)}</span></div><h4 id="title-${escapeHTML(s.id)}">${escapeHTML(s.title)}</h4><p class="session-description">${escapeHTML(s.description)}</p>
+   <div class="card-content"><div class="card-topline"><span class="campus-label">${escapeHTML(s.campus)}</span></div><h4 id="title-${escapeHTML(s.id)}"><button type="button" class="card-title-button" data-detail-id="${escapeHTML(s.id)}" aria-haspopup="dialog" aria-label="View full description: ${escapeHTML(s.title)}">${escapeHTML(s.title)}</button></h4><p class="session-description">${escapeHTML(s.description)}</p>
    <p class="presenters"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>${people}</span></p>${room}
-   <div class="tags" aria-label="Topics">${s.topics.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join('')}</div>
+   <div class="tags" aria-label="Topics">${s.topics.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join('')}</div><button type="button" class="details-button" data-detail-id="${escapeHTML(s.id)}" aria-haspopup="dialog">Read full description <span aria-hidden="true">↗</span></button>
    </div></article>`;
 }
 function render(){
@@ -67,6 +67,23 @@ function render(){
  }
  $('results').innerHTML=fragments.join('');
 }
+
+function openDetails(id){
+ const s=DATA.find(record=>record.id===id);
+ if(!s)return;
+ $('dialogDate').textContent=`${DAY_NAMES[s.date]} · ${s.time}`;
+ $('dialogTitle').textContent=s.title;
+ $('dialogCampus').textContent=s.campus;
+ $('dialogTopics').innerHTML=s.topics.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join('');
+ $('dialogDescription').replaceChildren();
+ (s.fullDescription||s.description).split(/\n\s*\n/).forEach(para=>{
+  const p=document.createElement('p');p.textContent=para;$('dialogDescription').appendChild(p);
+ });
+ $('dialogPresenters').textContent=s.presenters.join(', ');
+ $('dialogRoom').hidden=!(SHOW_ROOMS&&s.room);
+ $('dialogRoom').textContent=s.room?`Room: ${s.room}`:'';
+ $('sessionDialog').showModal();
+}
 function applyDay(next){state.day=next;document.querySelectorAll('.day-button').forEach(b=>{const active=b.dataset.day===next;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});render();}
 function reset(){state.search='';state.topic='all';state.campus='all';state.sort='original';$('search').value='';$('topic').value='all';$('campus').value='all';$('sort').value='original';applyDay('all');}
 document.addEventListener('DOMContentLoaded',()=>{
@@ -77,5 +94,15 @@ document.addEventListener('DOMContentLoaded',()=>{
  $('sort').addEventListener('change',e=>{state.sort=e.target.value;render()});
  document.querySelectorAll('.day-button').forEach(b=>b.addEventListener('click',()=>applyDay(b.dataset.day)));
  $('resetFilters').addEventListener('click',reset);$('emptyReset').addEventListener('click',reset);
+ $('results').addEventListener('click',event=>{
+  const trigger=event.target.closest('[data-detail-id]');
+  if(trigger)openDetails(trigger.dataset.detailId);
+ });
+ $('dialogClose').addEventListener('click',()=>$('sessionDialog').close());
+ $('dialogDone').addEventListener('click',()=>$('sessionDialog').close());
+ $('sessionDialog').addEventListener('click',e=>{
+  const rect=e.currentTarget.getBoundingClientRect();
+  if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)e.currentTarget.close();
+ });
  $('printButton').addEventListener('click',()=>window.print());
 });
