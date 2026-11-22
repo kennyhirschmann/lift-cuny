@@ -40,7 +40,7 @@ function card(s){
  const room = SHOW_ROOMS && s.room ? `<p class="room"><strong>Room:</strong> ${escapeHTML(s.room)}</p>` : '';
  return `<article class="session-card" id="${escapeHTML(s.id)}" aria-labelledby="title-${escapeHTML(s.id)}">
    <div class="card-icon">${icon(s.icon)}</div>
-   <div class="card-content"><div class="card-topline"><span class="campus-label">${escapeHTML(s.campus)}</span></div><h4 id="title-${escapeHTML(s.id)}"><button type="button" class="card-title-button" data-detail-id="${escapeHTML(s.id)}" aria-haspopup="dialog" aria-label="View full description: ${escapeHTML(s.title)}">${escapeHTML(s.title)}</button></h4><p class="session-description">${escapeHTML(s.description)}</p>
+   <div class="card-content"><div class="card-topline"><span class="campus-label">${escapeHTML(s.campus)}</span></div><h5 id="title-${escapeHTML(s.id)}"><button type="button" class="card-title-button" data-detail-id="${escapeHTML(s.id)}" aria-haspopup="dialog" aria-label="View full description: ${escapeHTML(s.title)}">${escapeHTML(s.title)}</button></h5><p class="session-description">${escapeHTML(s.description)}</p>
    <p class="presenters"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>${people}</span></p>${room}
    <div class="tags" aria-label="Topics">${s.topics.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join('')}</div><button type="button" class="details-button" data-detail-id="${escapeHTML(s.id)}" aria-haspopup="dialog">Read full description <span aria-hidden="true">↗</span></button>
    </div></article>`;
@@ -61,7 +61,7 @@ function render(){
      if(state.sort==='title') entries.sort((a,b)=>a.title.localeCompare(b.title));
      if(state.sort==='campus') entries.sort((a,b)=>a.campus.localeCompare(b.campus)||a.title.localeCompare(b.title));
      const count=entries.length;
-     blocks.push(`<section class="time-block" aria-label="${escapeHTML(time)} sessions"><div class="time-heading"><div class="time-chip"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><h3>${escapeHTML(time)}</h3></div><span class="concurrent-label">${count} ${count===1?'session':'concurrent sessions'}</span></div><div class="cards-grid">${entries.map(card).join('')}</div></section>`);
+     blocks.push(`<section class="time-block" aria-label="${escapeHTML(time)} sessions"><div class="time-heading"><div class="time-chip"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><h4>${escapeHTML(time)}</h4></div><span class="concurrent-label">${count} ${count===1?'session':'concurrent sessions'}</span></div><div class="cards-grid">${entries.map(card).join('')}</div></section>`);
    }
    fragments.push(`<section class="day-group" aria-labelledby="day-${date}"><div class="day-heading"><span class="day-chevron" aria-hidden="true"></span><h3 id="day-${date}">${DAY_NAMES[date]}</h3><span class="day-counter">${dateRecords.length} ${dateRecords.length===1?'session':'sessions'}</span></div>${blocks.join('')}</section>`);
  }
