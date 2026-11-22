@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082f86">
+  <meta name="description" content="Explore CUNY IT Conference 2026 presentations featuring LIFT@CUNY Collective members. Search, filter and browse sessions by day, topic and campus.">
+  <title>LIFT@CUNY at the 2026 CUNY IT Conference</title>
+  <link rel="icon" type="image/png" href="assets/lift-logo-original.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="sessions.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#schedule">Skip to sessions</a>
+  <header class="masthead">
+    <div class="brand-shell container">
+      <a class="brand" href="./" aria-label="LIFT@CUNY conference sessions home">
+        <img src="assets/lift-logo-original.png" alt="LIFT@CUNY Collective logo" width="258" height="180">
+      </a>
+      <div class="masthead-right">
+        <span class="eyebrow"><span class="eyebrow-line"></span> A community-led conference guide</span>
+        <p class="masthead-overline">2026 CUNY IT CONFERENCE</p>
+        <h1>Ideas worth <em>sharing.</em><br>People worth <em>hearing.</em></h1>
+        <p class="intro">Explore sessions featuring members of the <strong>LIFT@CUNY Collective</strong>, organized by time so you can see what's happening concurrently.</p>
+        <div class="hero-cta">
+          <a href="#schedule" class="button button-primary">Explore the sessions <span aria-hidden="true">↓</span></a>
+          <a class="button button-outline" target="_blank" rel="noopener noreferrer" href="https://events.govtech.com/CUNY-IT-Conference">Official conference website <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="chevron-hero" aria-hidden="true"><span></span><span></span><span></span></div>
+  </header>
+  <main>
+    <section class="overview" aria-label="Conference overview">
+      <div class="container overview-inner">
+        <div class="overview-date"><span class="tiny-label">WHEN</span><strong>December 3–4, 2026</strong><span>Thursday &amp; Friday</span></div>
+        <div class="overview-date"><span class="tiny-label">WHERE</span><strong>John Jay College</strong><span>New York City</span></div>
+        <div class="overview-number"><strong id="totalCount">13</strong><span>member sessions</span></div>
+      </div>
+    </section>
+    <section id="schedule" class="schedule-section container" aria-labelledby="schedule-heading">
+      <div class="section-heading">
+        <div><span class="section-kicker"><span class="chevron-small" aria-hidden="true"></span> YOUR SESSION GUIDE</span><h2 id="schedule-heading">Find your next <span>session.</span></h2><p>Search by topic, presenter, campus, or title. Time slots keep simultaneous sessions together.</p></div>
+        <button type="button" class="print-button" id="printButton"><span aria-hidden="true">⎙</span> Print view</button>
+      </div>
+      <div class="filter-panel" aria-label="Filter sessions">
+        <div class="search-row">
+          <label class="field-label" for="search">Search sessions</label>
+          <div class="search-field"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Try “accessibility”, “Hunter”, or “Jose Diaz”" autocomplete="off"></div>
+        </div>
+        <div class="controls-row">
+          <fieldset class="day-control"><legend class="field-label">Day</legend><div class="day-switch" role="group" aria-label="Day filter"><button type="button" class="day-button active" data-day="all" aria-pressed="true">Both days</button><button type="button" class="day-button" data-day="2026-12-03" aria-pressed="false">Thu · Dec 3</button><button type="button" class="day-button" data-day="2026-12-04" aria-pressed="false">Fri · Dec 4</button></div></fieldset>
+          <div class="field"><label class="field-label" for="topic">Topic</label><select id="topic"><option value="all">All topics</option></select></div>
+          <div class="field"><label class="field-label" for="campus">Campus / unit</label><select id="campus"><option value="all">All campuses</option></select></div>
+          <div class="field field-sort"><label class="field-label" for="sort">Sort within time slots</label><select id="sort"><option value="original">Program order</option><option value="title">Title A–Z</option><option value="campus">Campus A–Z</option></select></div>
+        </div>
+        <div class="filter-bottom"><p id="resultCount" role="status" aria-live="polite">Showing 13 of 13 sessions</p><button type="button" id="resetFilters" class="reset">Clear filters <span aria-hidden="true">×</span></button></div>
+      </div>
+      <div id="results"></div>
+      <div id="emptyState" class="empty" hidden><div class="empty-icon" aria-hidden="true">⌕</div><h3>No sessions found</h3><p>Try a different search term or clear your filters.</p><button class="button button-primary" type="button" id="emptyReset">Show all sessions</button></div>
+      <div class="note"><span class="note-glyph" aria-hidden="true">i</span><p><strong>About this guide:</strong> This is a curated selection of presentations involving LIFT@CUNY members, not the full conference program. Times and room assignments may change; consult the official conference schedule for updates.</p></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="footer-chevrons" aria-hidden="true"></div><div class="container footer-inner"><div><strong>LIFT@CUNY Collective</strong><p>Learning Design, Innovation &amp; Flexible Technology</p></div><a href="https://events.govtech.com/CUNY-IT-Conference" target="_blank" rel="noopener noreferrer">View official conference details ↗</a></div></footer>
+</body>
+</html>
