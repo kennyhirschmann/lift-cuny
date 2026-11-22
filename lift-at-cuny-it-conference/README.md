@@ -41,7 +41,7 @@ Edit `sessions.js` to change the title, description, presenters, time, campus, t
 
 Each card shows a readable summary. Selecting its title or **Read full description** opens a native HTML dialog with the full original description from the supplied Word document. The dialog supports keyboard focus, Escape to close, and a close button. Search matches the full descriptions as well as summaries.
 
-The Topic filter uses five broad categories: **Instructional Design**, **AI Tools & Development**, **Ethics & Governance**, **AI Literacy & Faculty Development**, and **Student Learning & Success**. Sessions can belong to multiple topics. Digital Foundations is explicitly labeled Instructional Design.
+The Topic filter uses six broad categories: **Instructional Design**, **AI Tools & Development**, **Ethics & Governance**, **AI & Digital Literacy**, **Faculty Development**, and **Student Learning & Success**. Sessions can belong to multiple topics. Digital Foundations is explicitly labeled both Instructional Design and AI & Digital Literacy.
 
 The One Coder title line in the supplied Word document combines two title versions; this site uses the second: **One Coder, One Vibe Coder: Building an AI-Powered Course Quality Ecosystem**. The document's full text has been retained except the obvious typo “speakerI” corrected to “speaker” and one grammatical typo (“this is generalizable” to “that is generalizable”).
 
