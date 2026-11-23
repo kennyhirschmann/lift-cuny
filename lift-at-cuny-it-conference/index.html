@@ -25,7 +25,7 @@
         <p class="intro">Explore sessions featuring members of the <strong>LIFT@CUNY Collective</strong>, organized by time so you can see what's happening concurrently.</p>
         <div class="hero-cta">
           <a href="#schedule" class="button button-primary">Explore the sessions <span aria-hidden="true">↓</span></a>
-          <a class="button button-outline" target="_blank" rel="noopener noreferrer" href="https://events.govtech.com/CUNY-IT-Conference">Official conference website <span aria-hidden="true">↗</span></a>
+          <a href="#about-lift" class="button button-outline">About LIFT@CUNY <span aria-hidden="true">↓</span></a><a class="button button-outline" target="_blank" rel="noopener noreferrer" href="https://events.govtech.com/CUNY-IT-Conference">Official conference website <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
       <div class="filter-panel" aria-label="Filter sessions">
         <div class="search-row">
           <label class="field-label" for="search">Search sessions</label>
-          <div class="search-field"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Try “accessibility”, “instructional design”, or “Jill Smith”" autocomplete="off"></div>
+          <div class="search-field"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Try “accessibility”, “instructional design”, or “City Tech”" autocomplete="off"></div>
         </div>
         <div class="controls-row">
           <fieldset class="day-control"><legend class="field-label">Day</legend><div class="day-switch" role="group" aria-label="Day filter"><button type="button" class="day-button active" data-day="all" aria-pressed="true">Both days</button><button type="button" class="day-button" data-day="2026-12-03" aria-pressed="false">Thu · Dec 3</button><button type="button" class="day-button" data-day="2026-12-04" aria-pressed="false">Fri · Dec 4</button></div></fieldset>
@@ -60,6 +60,30 @@
       <div id="results"></div>
       <div id="emptyState" class="empty" hidden><div class="empty-icon" aria-hidden="true">⌕</div><h3>No sessions found</h3><p>Try a different search term or clear your filters.</p><button class="button button-primary" type="button" id="emptyReset">Show all sessions</button></div>
       <div class="note"><span class="note-glyph" aria-hidden="true">i</span><p><strong>About this guide:</strong> This is a curated selection of presentations involving LIFT@CUNY members, not the full conference program. Times and room assignments may change; consult the official conference schedule for updates.</p></div>
+    </section>
+    <section id="about-lift" class="about-section" aria-labelledby="about-lift-heading">
+      <div class="container about-wrap">
+        <div class="about-heading">
+          <span class="section-kicker"><span class="chevron-small" aria-hidden="true"></span> CONNECT ACROSS CUNY</span>
+          <h2 id="about-lift-heading">About the <span>LIFT@CUNY Collective</span></h2>
+          <p class="about-lede">LIFT@CUNY is a grassroots, cross-campus community of practice advancing learning design, innovation, and flexible technology in teaching and learning.</p>
+          <p>We bring together instructional designers, educational technologists, online learning specialists, LMS administrators, and faculty partners to exchange expertise, solve shared challenges, and explore emerging practices.</p>
+        </div>
+        <div class="about-content">
+          <article class="about-card"><div class="about-card-chevron" aria-hidden="true"></div><h3>Connect &amp; share</h3><p>Build relationships across campuses, exchange ideas, and learn from successes and challenges.</p></article>
+          <article class="about-card"><div class="about-card-chevron" aria-hidden="true"></div><h3>Explore emerging technologies</h3><p>Discuss and investigate AI, XR/VR, HyFlex, and other evolving teaching and learning practices.</p></article>
+          <article class="about-card"><div class="about-card-chevron" aria-hidden="true"></div><h3>Collaborate across campuses</h3><p>Work together on practical solutions, open resources, and opportunities that benefit the wider CUNY community.</p></article>
+        </div>
+        <div class="about-cta" aria-labelledby="about-join-heading">
+          <div><span class="about-cta-label">GET INVOLVED</span><h3 id="about-join-heading">Connect with the LIFT@CUNY Collective.</h3><p>Interested in joining the conversation, sharing a resource, or collaborating across campuses? Complete our interest survey or connect with the community through Teams and Academic Commons.</p><div class="about-contact"><strong>Contact LIFT@CUNY</strong><span class="contact-placeholder">Contact email: [add LIFT@CUNY contact address]</span></div></div>
+          <div class="about-cta-links">
+            <a class="button button-yellow" href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=s_BgbwZfCU6XFZiduozH2GDV13jTnylPiSFiGZyfkJ5UMThKSTRHSFk4V0Y0ODZSNDZPWFFSRTRLMi4u&amp;route=shorturl" target="_blank" rel="noopener noreferrer">Complete the interest survey <span aria-hidden="true">↗</span></a>
+            <a class="button button-cta-outline" href="https://bit.ly/liftatcunyteams" target="_blank" rel="noopener noreferrer">Join our MS Teams community <span aria-hidden="true">↗</span></a>
+            <a class="button button-cta-outline" href="https://bit.ly/liftatcunycommons" target="_blank" rel="noopener noreferrer">Visit Academic Commons <span aria-hidden="true">↗</span></a>
+            <a class="about-text-link" href="https://bit.ly/liftatcunymail" target="_blank" rel="noopener noreferrer">Subscribe to the mailing list <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <dialog id="sessionDialog" class="session-dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDescription">

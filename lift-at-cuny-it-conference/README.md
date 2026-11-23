@@ -46,3 +46,19 @@ The Topic filter uses six broad categories: **Instructional Design**, **AI Tools
 The One Coder title line in the supplied Word document combines two title versions; this site uses the second: **One Coder, One Vibe Coder: Building an AI-Powered Course Quality Ecosystem**. The document's full text has been retained except the obvious typo “speakerI” corrected to “speaker” and one grammatical typo (“this is generalizable” to “that is generalizable”).
 
 To publish these changes, replace `index.html`, `app.js`, `sessions.js`, `styles.css`, and `README.md` in your repository, then commit and push in GitHub Desktop. The original image asset is unchanged.
+
+## About LIFT@CUNY section
+
+The page includes an **About the LIFT@CUNY Collective** section after the conference session guide, with concise Who We Are / What We Do content and a call to action. Links are based on the official one-sheet handout:
+
+- Mailing list: https://bit.ly/liftatcunymail
+- Microsoft Teams: https://bit.ly/liftatcunyteams
+- Academic Commons: https://bit.ly/liftatcunycommons
+
+The logo in `assets/lift-logo-original.png` is retained byte-for-byte. The session content and room visibility were not intentionally changed by this feature; this package also includes the previously supplied corrected 14-session JavaScript file. If you have edited sessions in GitHub since then, **keep your newer sessions.js** when applying this update.
+
+To update only this feature, replace `index.html` and `styles.css` in your existing website folder, then commit and push.
+
+### LIFT@CUNY contact details
+
+Replace the visible placeholder `[add LIFT@CUNY contact address]` in `index.html` when the shared contact address is confirmed. The interest survey, MS Teams, Academic Commons, and mailing-list links are already set up.

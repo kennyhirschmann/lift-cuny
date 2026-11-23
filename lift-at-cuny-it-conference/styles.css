@@ -19,3 +19,29 @@
 .mini-chevron{width:36px;height:36px;border:8px solid var(--navy);border-right-color:var(--blue);border-top-color:var(--yellow);transform:rotate(45deg) scale(.65)}
 @media(max-width:650px){.dialog-body{padding:22px 19px}.dialog-footer{padding:15px 19px}.dialog-top{padding:12px 18px}}
 @media print{.details-button{display:none}.card-title-button{text-decoration:none;cursor:default}.session-dialog{display:none}}
+
+
+/* About LIFT@CUNY and join call to action */
+.about-section{background:linear-gradient(155deg,#f0f7ff,#fff 65%);padding:75px 0 90px;border-top:1px solid var(--line)}
+.about-heading{max-width:860px}.about-heading h2{font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.15;letter-spacing:-.035em;margin:14px 0 20px;color:var(--navy-dark)}.about-heading h2 span{color:var(--navy)}
+.about-heading p{color:#334968;font-size:1rem}.about-heading .about-lede{font-size:1.18rem;font-weight:650;color:#193663}
+.about-content{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin:35px 0}
+.about-card{position:relative;background:#fff;border:1.5px solid #d4e2f5;border-radius:17px;padding:25px 22px 22px;box-shadow:var(--shadow)}
+.about-card-chevron{width:33px;height:23px;margin-bottom:18px;clip-path:polygon(50% 0,100% 75%,100% 100%,50% 25%,0 100%,0 75%);background:var(--blue);border-top:4px solid var(--navy)}
+.about-card:nth-child(2) .about-card-chevron{background:var(--yellow)}
+.about-card h3{font-size:1.12rem;color:var(--navy-dark);margin-bottom:10px}.about-card p{font-size:.92rem;color:#455978;margin-bottom:0}
+.about-cta{display:grid;grid-template-columns:1.7fr 1fr;gap:32px;align-items:center;background:var(--navy-dark);color:#fff;border-radius:20px;padding:35px 39px;position:relative;overflow:hidden}
+.about-cta:after{content:'';position:absolute;width:190px;height:190px;right:-96px;top:-90px;border:25px solid var(--blue);transform:rotate(45deg);opacity:.18;pointer-events:none}
+.about-cta-label{font-weight:800;letter-spacing:.15em;font-size:.72rem;color:#ffdb72}.about-cta h3{font-size:clamp(1.4rem,2.4vw,2rem);margin:9px 0 12px;line-height:1.2}.about-cta p{color:#dbe9ff;margin:0}
+.about-cta-links{display:flex;flex-direction:column;gap:12px;align-items:stretch;position:relative;z-index:1}
+.button-yellow{background:var(--yellow);color:var(--navy-dark);border-color:var(--yellow);justify-content:center}
+.button-cta-outline{border-color:#b6d4ff;color:#fff;background:transparent;justify-content:center}
+.about-text-link{font-size:.88rem;color:#fff;text-decoration:underline;text-underline-offset:3px;text-align:center;padding:7px}
+@media(max-width:760px){.about-content{grid-template-columns:1fr}.about-cta{grid-template-columns:1fr;padding:26px 22px}.about-section{padding:55px 0 68px}}
+@media print{.about-section{break-before:page}.about-cta{background:#fff;color:var(--ink);border:1px solid var(--line)}.about-cta p,.about-cta-label,.about-text-link{color:var(--ink)}.about-content{grid-template-columns:repeat(3,1fr)}}
+
+/* Contact information in the LIFT@CUNY invitation */
+.about-contact{margin-top:20px;padding:16px 18px;border:1px solid #9cc6ff;border-radius:12px;background:#ffffff0d;display:flex;flex-direction:column;gap:5px}
+.about-contact strong{font-size:.95rem;color:#fff}
+.about-contact .contact-placeholder{font-size:.88rem;color:#e1edff}
+@media print{.about-contact{background:#fff}.about-contact strong,.about-contact .contact-placeholder{color:var(--ink)}}
