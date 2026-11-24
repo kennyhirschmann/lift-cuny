@@ -45,3 +45,27 @@
 .about-contact strong{font-size:.95rem;color:#fff}
 .about-contact .contact-placeholder{font-size:.88rem;color:#e1edff}
 @media print{.about-contact{background:#fff}.about-contact strong,.about-contact .contact-placeholder{color:var(--ink)}}
+
+
+/* GitHub conference guide: logo lockup and website links */
+.brand-lockup { width: 100%; max-width: 290px; text-align: center; }
+.brand-lockup .brand { display: block; width: 100%; max-width: none; padding: 0; }
+.brand-lockup .brand img { display: block; width: 100%; height: auto; }
+.brand-rule { width: 91%; height: 4px; margin: 5px auto 11px; background: var(--yellow); }
+.brand-tagline { margin: 0; color: var(--navy-dark); font-size: clamp(.9rem, 1.25vw, 1.07rem); line-height: 1.35; font-weight: 800; text-wrap: balance; }
+.hero-cta .button-website { background: var(--yellow); color: var(--navy-dark); border-color: var(--yellow); }
+.footer-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+@media (max-width: 980px) {
+  .brand-lockup { max-width: 220px; }
+  .brand-tagline { font-size: .92rem; }
+}
+@media (max-width: 650px) {
+  .brand-lockup { max-width: 235px; margin-inline: auto; }
+  .brand-tagline { font-size: .95rem; }
+  .footer-links { align-items: flex-start; }
+}
+@media print {
+  .brand-lockup { max-width: 120px; }
+  .brand-rule { margin: 2px auto 5px; height: 2px; }
+  .brand-tagline { font-size: 8px; }
+}
