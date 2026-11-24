@@ -114,3 +114,58 @@
   .back-to-top { transition: none; }
 }
 @media print { .back-to-top { display: none !important; } }
+
+
+/* =========================================================
+   LIFT@CUNY — compact print-only session guide
+   Overrides old print styles. Does not affect screen layout.
+   ========================================================= */
+@media print {
+  @page { size: letter portrait; margin: 11mm 12mm; }
+  html, body { width: auto !important; height: auto !important; overflow: visible !important; background: white !important; color: #102348 !important; font-size: 9pt !important; line-height: 1.28 !important; }
+  .container { width: 100% !important; max-width: none !important; margin: 0 !important; }
+  .masthead { overflow: visible !important; background: #fff !important; }
+  .masthead::before, .masthead::after, .chevron-hero, .hero-cta,
+  .filter-panel, .print-button, .skip-link, .back-to-top,
+  .about-section, .footer, .note, .empty, .session-dialog, .details-button,
+  .session-description, .card-icon, .session-card::before, .tags,
+  .eyebrow, .masthead-overline, .intro, .section-kicker, .day-chevron,
+  .time-chip svg { display: none !important; }
+  .brand-shell { display: flex !important; align-items: center !important; gap: 12mm !important; padding: 0 0 3mm !important; }
+  .brand-lockup { flex: 0 0 38mm !important; max-width: 38mm !important; margin: 0 !important; }
+  .brand { max-width: 38mm !important; padding: 0 !important; }
+  .brand img { width: 38mm !important; max-height: 25mm !important; object-fit: contain !important; }
+  .brand-rule { margin: 1mm auto !important; height: 1px !important; }
+  .brand-tagline { font-size: 6pt !important; line-height: 1.15 !important; margin: 1mm 0 0 !important; }
+  .masthead-right { flex: 1; min-width: 0; }
+  .masthead h1 { color: #082f72 !important; font-size: 18pt !important; letter-spacing: -.025em !important; line-height: 1.12 !important; margin: 0 !important; }
+  .masthead h1 br { display: none !important; }
+  .masthead h1 br::after { content: ' '; }
+  .overview-inner { padding: 2mm 0 3mm !important; gap: 14mm !important; border-top: .5pt solid #bdcce1; border-bottom: .5pt solid #bdcce1; }
+  .overview-date strong { font-size: 8.5pt !important; }
+  .overview-date span { font-size: 7pt !important; }
+  .overview-number strong { font-size: 18pt !important; }
+  .overview-number span { font-size: 7pt !important; }
+  .schedule-section { padding: 3mm 0 0 !important; }
+  .section-heading { margin: 0 0 3mm !important; }
+  .section-heading h2 { font-size: 13pt !important; margin: 0 !important; }
+  #results { display: block !important; }
+  .day-group { margin: 0 0 3mm !important; break-before: auto !important; page-break-before: auto !important; break-inside: auto !important; }
+  .day-heading { border-bottom: 1.5pt solid #ffbd21 !important; padding: 0 0 1.5mm !important; margin: 0 0 2mm !important; gap: 3mm !important; break-after: avoid !important; }
+  .day-heading h3 { font-size: 11pt !important; line-height: 1.2 !important; }
+  .day-counter { font-size: 7pt !important; padding: 1mm 2mm !important; }
+  .time-block { margin: 0 0 2.5mm !important; break-inside: auto !important; page-break-inside: auto !important; }
+  .time-heading { border-radius: 2mm !important; min-height: 0 !important; padding: 1.2mm 2.5mm !important; margin: 0 0 1.5mm !important; gap: 3mm !important; background: #edf3fb !important; color: #092f76 !important; break-after: avoid !important; }
+  .time-chip { padding: 0 !important; background: transparent !important; color: #092f76 !important; }
+  .time-chip h3, .time-chip h4 { color: #092f76 !important; font-size: 9pt !important; line-height: 1.15 !important; margin: 0 !important; }
+  .concurrent-label { background: transparent !important; font-size: 7pt !important; color: #455a7a !important; padding: 0 !important; }
+  .cards-grid { display: grid !important; grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 1.7mm 3mm !important; align-items: start !important; }
+  .session-card { display: block !important; min-width: 0 !important; padding: 2mm 2.5mm !important; margin: 0 !important; border: .65pt solid #c4d1e3 !important; border-radius: 2mm !important; background: #fff !important; box-shadow: none !important; overflow: visible !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .campus-label { font-size: 6.8pt !important; line-height: 1.15 !important; letter-spacing: .03em !important; }
+  .session-card h4, .session-card h5 { font-size: 8.7pt !important; line-height: 1.16 !important; letter-spacing: 0 !important; margin: 1mm 0 1.1mm !important; color: #0a275b !important; }
+  .card-title-button { font-size: inherit !important; line-height: inherit !important; font-weight: 800 !important; text-align: left !important; color: #0a275b !important; padding: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; }
+  .presenters { margin: 0 !important; color: #263c61 !important; font-size: 7.4pt !important; font-weight: 600 !important; line-height: 1.2 !important; gap: 1mm !important; }
+  .presenters svg { display: none !important; }
+  .room { font-size: 7pt !important; margin: 1mm 0 0 !important; }
+  * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+}
