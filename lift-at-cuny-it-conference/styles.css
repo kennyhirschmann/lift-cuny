@@ -69,3 +69,48 @@
   .brand-rule { margin: 2px auto 5px; height: 2px; }
   .brand-tagline { font-size: 8px; }
 }
+
+/* Floating back-to-top control; kept separate from existing page styles. */
+.back-to-top {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 68px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: #082f86;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(5, 28, 79, .25);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: #0647b3; color: #fff; text-decoration: none; }
+.back-to-top:focus-visible { outline: 3px solid #ffbc29; outline-offset: 3px; }
+.back-to-top > span:first-child { font-size: 22px; line-height: 1; }
+@media (max-width: 500px) {
+  .back-to-top { right: 12px; bottom: 12px; min-width: 48px; padding: 10px; }
+  .back-to-top-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: none; }
+}
+@media print { .back-to-top { display: none !important; } }

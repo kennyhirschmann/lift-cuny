@@ -11,13 +11,13 @@
   <script src="sessions.js" defer></script>
   <script src="app.js" defer></script>
 </head>
-<body>
+<body id="page-top">
   <a class="skip-link" href="#schedule">Skip to sessions</a>
   <header class="masthead">
     <div class="brand-shell container">
       <div class="brand-lockup">
         <a class="brand" href="https://lift.commons.gc.cuny.edu/" target="_blank" rel="noopener noreferrer" aria-label="Visit the LIFT@CUNY Collective website">
-          <img src="assets/lift-logo-main.png" alt="LIFT@CUNY Collective" width="258" height="180">
+          <img src="assets/lift-logo-main.png" alt="LIFT@CUNY logo with a layered triangular peak. Navy, cyan, orange, and yellow bands sit above text reading “LIFT@CUNY COLLECTIVE.”" width="258" height="180">
         </a>
         <div class="brand-rule" aria-hidden="true"></div>
         <p class="brand-tagline">Learning Design, Innovation<br>&amp; Flexible Technology</p>
@@ -94,6 +94,20 @@
     <div class="dialog-body"><span id="dialogDate" class="dialog-date"></span><h2 id="dialogTitle"></h2><div id="dialogTopics" class="tags dialog-tags"></div><p id="dialogCampus" class="dialog-campus"></p><div id="dialogDescription" class="dialog-description"></div><h3 class="dialog-presenters-heading">Presenters</h3><p id="dialogPresenters" class="dialog-presenters"></p><p id="dialogRoom" class="dialog-room" hidden></p></div>
     <div class="dialog-footer"><span class="mini-chevron" aria-hidden="true"></span><button type="button" id="dialogDone" class="button button-primary">Close details</button></div>
   </dialog>
+  <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span><span class="back-to-top-label">Top</span></a>
   <footer class="footer"><div class="footer-chevrons" aria-hidden="true"></div><div class="container footer-inner"><div><strong>LIFT@CUNY Collective</strong><p>Learning Design, Innovation &amp; Flexible Technology</p></div><div class="footer-links"><a href="https://lift.commons.gc.cuny.edu/" target="_blank" rel="noopener noreferrer">Visit the LIFT@CUNY website ↗</a><a href="https://events.govtech.com/CUNY-IT-Conference" target="_blank" rel="noopener noreferrer">Official conference website ↗</a></div></div></footer>
+  <script>
+    (() => {
+      const link = document.querySelector('.back-to-top');
+      if (!link) return;
+      const update = () => link.classList.toggle('is-visible', window.scrollY > 320);
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      });
+    })();
+  </script>
 </body>
 </html>
