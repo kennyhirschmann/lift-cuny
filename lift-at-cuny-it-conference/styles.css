@@ -51,9 +51,9 @@
 .brand-lockup { width: 100%; max-width: 290px; text-align: center; }
 .brand-lockup .brand { display: block; width: 100%; max-width: none; padding: 0; }
 .brand-lockup .brand img { display: block; width: 100%; height: auto; }
-.brand-rule { width: 91%; height: 4px; margin: 5px auto 11px; background: var(--yellow); }
+.brand-rule { width: 91%; height: 4px; margin: 5px auto 5px; background: var(--yellow); }
 .brand-tagline { margin: 0; color: var(--navy-dark); font-size: clamp(.9rem, 1.25vw, 1.07rem); line-height: 1.35; font-weight: 800; text-wrap: balance; }
-.hero-cta .button-website { background: var(--yellow); color: var(--navy-dark); border-color: var(--yellow); }
+
 .footer-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
 @media (max-width: 980px) {
   .brand-lockup { max-width: 220px; }
